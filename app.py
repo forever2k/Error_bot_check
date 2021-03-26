@@ -25,7 +25,7 @@ def send_welcome(message):
 @bot.message_handler(commands=['send'])
 def send_to_group(message):
     mes = 'my message'
-    bot.send_message(test_group, mes)
+    bot.send_message(testGroup_withOlenka, mes)
 
 
 @bot.message_handler(content_types=["text"])
