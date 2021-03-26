@@ -15,7 +15,9 @@ server = Flask(__name__)
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     mes = get_messages()
+    mes2 = 'some text'
     bot.send_message(message.from_user.id, mes)
+    bot.send_message(message.from_user.id, mes2)
 
 
 @bot.message_handler(content_types=["text"])
