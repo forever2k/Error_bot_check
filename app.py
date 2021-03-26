@@ -21,10 +21,10 @@ def send_welcome(message):
     # bot.send_message(message.from_user.id, mes)
 
 
-@bot.message_handler(commands=['sendto'])
+@bot.message_handler(commands=['send'])
 def send_to_group():
     mes = 'my message'
-    bot.send_message(testGroup_withOlenka, mes)
+    bot.send_message(-579324010, mes)
 
 
 @bot.message_handler(content_types=["text"])
