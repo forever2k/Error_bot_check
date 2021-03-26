@@ -12,6 +12,7 @@ bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
 testGroup_withOlenka = -579324010
+test_group = -1001153348142
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
@@ -24,7 +25,7 @@ def send_welcome(message):
 @bot.message_handler(commands=['send'])
 def send_to_group():
     mes = 'my message'
-    bot.send_message(-579324010, mes)
+    bot.send_message(test_group, mes)
 
 
 @bot.message_handler(content_types=["text"])
