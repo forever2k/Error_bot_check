@@ -1,6 +1,7 @@
 import telebot
 from flask import Flask, request
 import os
+import random
 
 TOKEN = '1668076384:AAF4aDoDF6_KqaADNtgGjUIdgykdVAM4qtI'
 APP_NAME = 'https://error-bot-check.herokuapp.com/'
@@ -8,6 +9,14 @@ APP_NAME = 'https://error-bot-check.herokuapp.com/'
 bot = telebot.TeleBot(TOKEN)
 
 server = Flask(__name__)
+
+
+@bot.message_handler(content_types=["text"])
+def repeat_all_messages(message):
+    for_message = ['пока я туповат и никуя не понимаю', 'я учусь', 'отстань от меня человек', 'ой, всё']
+    bot_message_random = random.randrange(0, len(for_message))
+    bot_mes = for_message[bot_message_random].capitalize()
+    bot.send_message(message.chat.id, bot_mes)
 
 
 
