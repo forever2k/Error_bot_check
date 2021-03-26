@@ -11,13 +11,20 @@ bot = telebot.TeleBot(TOKEN)
 
 server = Flask(__name__)
 
+testGroup_withOlenka = -579324010
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     # mes = get_messages()
-    mes2 = 'some text'
-    bot.send_message(message.from_user.id, mes2)
+    mes = 'some text'
+    bot.send_message(message.from_user.id, mes)
     # bot.send_message(message.from_user.id, mes)
+
+
+@bot.message_handler(commands=['sendto'])
+def send_welcome():
+    mes = 'my message'
+    bot.send_message(testGroup_withOlenka, mes)
 
 
 @bot.message_handler(content_types=["text"])
@@ -29,11 +36,11 @@ def repeat_all_messages(message):
 
 
 
-
-def get_messages():
-    # Функция использует метод getUpdates и возвращает массив объектов
-    result = requests.get(f'https://api.telegram.org/bot{TOKEN}/getUpdates?offset=10').json()
-    return result['result']
+#
+# def get_messages():
+#     # Функция использует метод getUpdates и возвращает массив объектов
+#     result = requests.get(f'https://api.telegram.org/bot{TOKEN}/getUpdates?offset=10').json()
+#     return result['result']
 
 # def set_message(chat_id, text):
 #     # Функция использует метод sendMessage для отправки текстовых сообщений
