@@ -23,7 +23,7 @@ def send_welcome(message):
 
 
 @bot.message_handler(commands=['send'])
-def send_to_group():
+def send_to_group(message):
     mes = 'my message'
     bot.send_message(test_group, mes)
 
